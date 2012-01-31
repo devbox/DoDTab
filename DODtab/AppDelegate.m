@@ -1,12 +1,15 @@
 //
 //  AppDelegate.m
-//  DODtab
+//  TaT
 //
-//  Created by Tobias Friedenauer on 31.01.12.
+//  Created by Tobias Friedenauer on 18.01.12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "Shot.h"
+#import "FirstViewController.h"
+
 
 @implementation AppDelegate
 
@@ -14,10 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    /*
+     Shot *shot1 = [[Shot alloc] initWithValveId:1 valveDelay:10 valveOpenTime:100];
+     Shot *shot2 = [[Shot alloc] initWithValveId:2 valveDelay:20 valveOpenTime:200];
+     Shot *shot3 = [[Shot alloc] initWithValveId:3 valveDelay:30 valveOpenTime:300];
+     
+     NSLog(@"%i", shot1.uebergabeWert);
+     NSLog(@"%i", shot2.uebergabeWert);
+     NSLog(@"%i", shot3.uebergabeWert);
+     */
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
@@ -56,5 +67,7 @@
      See also applicationDidEnterBackground:.
      */
 }
+
+
 
 @end
