@@ -258,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the second view controller — an instance of SecondViewController — specified in the app delegate." textAlignment="center" id="23">
-                                <rect key="frame" x="20" y="181" width="280" height="88"/>
+                                <rect key="frame" x="20" y="162" width="280" height="88"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -267,6 +267,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <connections>
+                        <outlet property="view" destination="17" id="CuF-pV-1JC"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="498"/>
@@ -294,6 +297,27 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="FirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Start:"/>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="outlet" name="UiTextDelay1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextDelay2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextDelay3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextOpenTime1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextOpenTime2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextOpenTime3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="choosenValveOutlet1" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="choosenValveOutlet2" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="choosenValveOutlet3" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
