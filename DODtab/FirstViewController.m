@@ -157,13 +157,13 @@
     
     NSLog(@"%@", transmit);
     
-    /*/ ------------- Daten Senden durch Socket "s" ----------    
+    // ------------- Daten Senden durch Socket "s" ----------    
     
     int s;
     struct sockaddr_in cli;
     struct hostent *server;
     char str [2048];    // puffer probleme durch gesamtsring?
-    server = gethostbyname("192.168.7.30");
+    server = gethostbyname("127.0.0.1");
     bzero(&cli, sizeof(cli));
     cli.sin_family = AF_INET;
     cli.sin_addr.s_addr = htonl(INADDR_ANY);
@@ -174,7 +174,7 @@
     connect(s, (void *)&cli, sizeof(cli));
     strcpy(str, [transmit UTF8String]);
     strcat(str, "\n");
-    NSLog (@"%@",transmit);
+    NSLog (@"Übertragung: %@",transmit);
     write(s, str, strlen(str));
     
     
@@ -182,28 +182,33 @@
     
     char buff[2048];   // puffer probleme durch gesamtsring?
     unsigned int count; 
-    int recvVar1, recvVar2, recvVar3, recvVar4, recvVar5;  //recvVar5 wird von iPhone immer 1 sein, da es auf Arduino Seite als Start der Anlage dient, und danach auf Arduinoseite wieder auf 0 gesetzt wird.
+    int recvVar1, recvVar2, recvVar3, recvVar4, recvVar5, recvVar6, recvVar7, recvVar8, recvVar9, recvVar10;  //recvVar5 wird von iPhone immer 1 sein, da es auf Arduino Seite als Start der Anlage dient, und danach auf Arduinoseite wieder auf 0 gesetzt wird.
     listen(s, 5);
     count = recv(s, buff, sizeof(buff)-1, 0);   
     NSLog (@"%i",count);
     NSString *stringEmpfangen = [NSString stringWithUTF8String:buff];
-    NSLog (@"%@",stringEmpfangen);
-    sscanf(buff, "%d %d %d %d %d", &recvVar1, &recvVar2, &recvVar3, &recvVar4, &recvVar5);
+    NSLog (@"Empfangen: %@",stringEmpfangen);
+    sscanf(buff, "%d %d %d %d %d %d %d %d %d %d", &recvVar1, &recvVar2, &recvVar3, &recvVar4, &recvVar5, &recvVar6, &recvVar7, &recvVar8, &recvVar9, &recvVar10);
     NSLog (@"gesetzter Wert 1: %i", recvVar1);
     NSLog (@"gesetzter Wert 2: %i", recvVar2);
     NSLog (@"gesetzter Wert 3: %i", recvVar3);
     NSLog (@"gesetzter Wert 4: %i", recvVar4);
     NSLog (@"gesetzter Wert 5: %i", recvVar5);
+    NSLog (@"gesetzter Wert 5: %i", recvVar6);
+    NSLog (@"gesetzter Wert 5: %i", recvVar7);
+    NSLog (@"gesetzter Wert 5: %i", recvVar8);
+    NSLog (@"gesetzter Wert 5: %i", recvVar9);
+    NSLog (@"gesetzter Wert 5: %i", recvVar10);
     
-    
+    /*
     self.tropfenAnzahlAusgabe.text = [NSString stringWithFormat:@"arVar 1: %i", recvVar1];
     self.tropfenZeitAusgabe.text = [NSString stringWithFormat:@"arVar 2: %i", recvVar2];
     self.tropfenGroesseAusgabe.text = [NSString stringWithFormat:@"arVar 3: %i", recvVar3];
     self.blitzZeitAusgabe.text = [NSString stringWithFormat:@"arVar 4: %i", recvVar4];
-    
+    */
      
     close(s);  
-    */
+    
     
     
 
