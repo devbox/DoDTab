@@ -142,7 +142,7 @@
     
     NSLog(@"%@", transmit);
     
-    /*/ ------------- Daten Senden durch Socket "s" ----------    
+    // ------------- Daten Senden durch Socket "s" ----------    
     
     int s;
     struct sockaddr_in cli;
@@ -180,15 +180,16 @@
     NSLog (@"gesetzter Wert 4: %i", recvVar4);
     NSLog (@"gesetzter Wert 5: %i", recvVar5);
     
-    /
+    /*
     self.tropfenAnzahlAusgabe.text = [NSString stringWithFormat:@"arVar 1: %i", recvVar1];
     self.tropfenZeitAusgabe.text = [NSString stringWithFormat:@"arVar 2: %i", recvVar2];
     self.tropfenGroesseAusgabe.text = [NSString stringWithFormat:@"arVar 3: %i", recvVar3];
     self.blitzZeitAusgabe.text = [NSString stringWithFormat:@"arVar 4: %i", recvVar4];
-    
+    */
+     
     close(s);  
     
-    */
+    
     
 
 }
