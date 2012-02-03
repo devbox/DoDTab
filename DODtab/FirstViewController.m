@@ -84,6 +84,7 @@
     [self setUiTextOpenTime1:nil];
     [self setUiTextOpenTime2:nil];
     [self setUiTextOpenTime3:nil];
+    [self setUiFlashDelay:nil];
     [self setMenuView:nil];
     [self setScroller:nil];
     [super viewDidUnload];

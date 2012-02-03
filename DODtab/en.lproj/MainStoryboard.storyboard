@@ -309,6 +309,7 @@
             <relationships>
                 <relationship kind="action" name="Start:"/>
                 <relationship kind="action" name="backButton:"/>
+                <relationship kind="outlet" name="UiFlashDelay" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="UiTextDelay1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="UiTextDelay2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="UiTextDelay3" candidateClass="UITextField"/>
