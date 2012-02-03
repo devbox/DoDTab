@@ -225,7 +225,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="2" id="rC0-Y1-DNo"/>
                                                 </connections>
@@ -240,6 +240,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="first.png" id="7"/>
                     <connections>
+                        <outlet property="UiFlashDelay" destination="CAH-ul-gsN" id="L2k-Dr-Yg6"/>
+                        <outlet property="UiTextDelay1" destination="Lp2-cO-QaN" id="WxX-d5-zki"/>
+                        <outlet property="UiTextDelay2" destination="dpT-Xr-FVl" id="nwA-FD-i5X"/>
+                        <outlet property="UiTextDelay3" destination="gsd-5c-x5j" id="xkn-kY-VQK"/>
+                        <outlet property="UiTextOpenTime1" destination="VkD-EO-PD1" id="WND-gY-pfa"/>
+                        <outlet property="UiTextOpenTime2" destination="cq5-c9-IhZ" id="rZp-v0-swT"/>
+                        <outlet property="UiTextOpenTime3" destination="fFZ-hr-WB4" id="OLe-DW-Atc"/>
+                        <outlet property="choosenValveOutlet1" destination="ufa-Z7-gGJ" id="hhx-YA-uRX"/>
+                        <outlet property="choosenValveOutlet2" destination="aGI-t4-BoR" id="MjH-y5-tve"/>
+                        <outlet property="choosenValveOutlet3" destination="Lgo-gw-N6q" id="0cO-0Q-ElU"/>
                         <outlet property="menuView" destination="lcV-S3-XuD" id="gKh-1m-bEL"/>
                         <outlet property="scroller" destination="dhO-6o-Ygp" id="IyM-AC-BDu"/>
                     </connections>

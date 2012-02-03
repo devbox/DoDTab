@@ -52,6 +52,13 @@
 //Beim verlassen eines Textfeldes
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    [self.UiTextDelay1 resignFirstResponder];
+    [self.UiTextDelay2 resignFirstResponder];
+    [self.UiTextDelay3 resignFirstResponder];
+    [self.UiTextOpenTime1 resignFirstResponder];
+    [self.UiTextOpenTime2 resignFirstResponder];
+    [self.UiTextOpenTime3 resignFirstResponder];
+    [self.UiFlashDelay resignFirstResponder];
 }
 //-------------------------------
 
@@ -122,6 +129,7 @@
 //Beim Tippen auf den Hintergrund wird die Tastatur ausgeblendet--------------
 - (IBAction)backButton:(id)sender 
 {
+    NSLog(@"%@", self.UiTextDelay1);
     [self.UiTextDelay1 resignFirstResponder];
     [self.UiTextDelay2 resignFirstResponder];
     [self.UiTextDelay3 resignFirstResponder]; 
@@ -149,7 +157,7 @@
     
     NSLog(@"%@", transmit);
     
-    // ------------- Daten Senden durch Socket "s" ----------    
+    /*/ ------------- Daten Senden durch Socket "s" ----------    
     
     int s;
     struct sockaddr_in cli;
@@ -187,15 +195,15 @@
     NSLog (@"gesetzter Wert 4: %i", recvVar4);
     NSLog (@"gesetzter Wert 5: %i", recvVar5);
     
-    /*
+    
     self.tropfenAnzahlAusgabe.text = [NSString stringWithFormat:@"arVar 1: %i", recvVar1];
     self.tropfenZeitAusgabe.text = [NSString stringWithFormat:@"arVar 2: %i", recvVar2];
     self.tropfenGroesseAusgabe.text = [NSString stringWithFormat:@"arVar 3: %i", recvVar3];
     self.blitzZeitAusgabe.text = [NSString stringWithFormat:@"arVar 4: %i", recvVar4];
-    */
+    
      
     close(s);  
-    
+    */
     
     
 
