@@ -12,6 +12,8 @@
 
 
 @implementation FirstViewController
+@synthesize scroller;
+@synthesize menuView;
 @synthesize UiTextDelay1;
 @synthesize UiTextDelay2;
 @synthesize UiTextDelay3;
@@ -53,8 +55,11 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [scroller setScrollEnabled:YES];
+    [scroller setContentSize:CGSizeMake(320, 1100)];
 }
 
 - (void)viewDidUnload
@@ -68,6 +73,8 @@
     [self setUiTextOpenTime1:nil];
     [self setUiTextOpenTime2:nil];
     [self setUiTextOpenTime3:nil];
+    [self setMenuView:nil];
+    [self setScroller:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

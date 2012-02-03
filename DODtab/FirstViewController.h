@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController <UITextFieldDelegate>
+@interface FirstViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scroller;
+
+@property (strong, nonatomic) IBOutlet UIView *menuView;
 
 - (IBAction)backButton:(id)sender;
 
