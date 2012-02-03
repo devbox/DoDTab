@@ -217,16 +217,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <outlet property="delegate" destination="2" id="6z6-SX-khP"/>
+                                    <outlet property="delegate" destination="2" id="aQQ-QQ-CmM"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="first.png" id="7"/>
                     <connections>
+                        <outlet property="UiFlashDelay" destination="cZ6-b9-6N3" id="6Kt-Nh-5Yv"/>
                         <outlet property="UiTextDelay1" destination="Or7-pj-10q" id="Pfy-G8-sEz"/>
                         <outlet property="UiTextDelay2" destination="r7F-nl-ZPg" id="nwk-Kd-0DU"/>
                         <outlet property="UiTextDelay3" destination="T22-0H-DrW" id="Xgf-7x-93V"/>
@@ -266,7 +267,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Preferences" image="second.png" id="6"/>
                     <connections>
                         <outlet property="view" destination="17" id="CuF-pV-1JC"/>
                     </connections>
@@ -294,30 +295,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
+        <image name="first.png" width="30" height="30"/>
+        <image name="second.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Start:"/>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="UiTextDelay1" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextDelay2" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextDelay3" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextOpenTime1" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextOpenTime2" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextOpenTime3" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="choosenValveOutlet1" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="choosenValveOutlet2" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="choosenValveOutlet3" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

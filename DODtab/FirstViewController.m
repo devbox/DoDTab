@@ -28,6 +28,8 @@
 @synthesize choosenValveOutlet1;
 @synthesize choosenValveOutlet2;
 @synthesize choosenValveOutlet3;
+@synthesize UiFlashDelay;
+
 
 
 //Bei Enter wird die Tastatur ausgeblendet------------------------
@@ -39,6 +41,8 @@
     [self.UiTextOpenTime1 resignFirstResponder];
     [self.UiTextOpenTime2 resignFirstResponder];
     [self.UiTextOpenTime3 resignFirstResponder];
+    [self.UiFlashDelay resignFirstResponder];
+    
     return YES;
 }
 //----------------------------------------------------------------
@@ -75,6 +79,7 @@
     [self setUiTextOpenTime1:nil];
     [self setUiTextOpenTime2:nil];
     [self setUiTextOpenTime3:nil];
+    [self setUiFlashDelay:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -116,6 +121,7 @@
     [self.UiTextOpenTime1 resignFirstResponder];
     [self.UiTextOpenTime2 resignFirstResponder];
     [self.UiTextOpenTime3 resignFirstResponder];
+    [self.UiFlashDelay resignFirstResponder];
     
 }
 
@@ -132,10 +138,11 @@
     NSLog(@"%i", shot3.uebergabeWert);
     */
      
-    NSString *transmit = [NSString stringWithFormat:@"%i %i %i %i %i %i %i %i %i",shot1.valveId, shot1.valveDelay, shot1.valveOpenTime, shot2.valveId, shot2.valveDelay,shot2.valveOpenTime, shot3.valveId, shot3.valveDelay,shot3.valveOpenTime];
-    NSLog(@"%i %i %i %i %i %i %i %i %i",shot1.valveId, shot1.valveDelay, shot1.valveOpenTime, shot2.valveId, shot2.valveDelay,shot2.valveOpenTime, shot3.valveId, shot3.valveDelay,shot3.valveOpenTime);
+    NSString *transmit = [NSString stringWithFormat:@"%i %i %i %i %i %i %i %i %i %i",shot1.valveId, shot1.valveDelay, shot1.valveOpenTime, shot2.valveId, shot2.valveDelay,shot2.valveOpenTime, shot3.valveId, shot3.valveDelay,shot3.valveOpenTime,[self.UiFlashDelay.text intValue]];
     
-    // ------------- Daten Senden durch Socket "s" ----------    
+    NSLog(@"%@", transmit);
+    
+    /*/ ------------- Daten Senden durch Socket "s" ----------    
     
     int s;
     struct sockaddr_in cli;
@@ -173,14 +180,15 @@
     NSLog (@"gesetzter Wert 4: %i", recvVar4);
     NSLog (@"gesetzter Wert 5: %i", recvVar5);
     
-    /*
+    /
     self.tropfenAnzahlAusgabe.text = [NSString stringWithFormat:@"arVar 1: %i", recvVar1];
     self.tropfenZeitAusgabe.text = [NSString stringWithFormat:@"arVar 2: %i", recvVar2];
     self.tropfenGroesseAusgabe.text = [NSString stringWithFormat:@"arVar 3: %i", recvVar3];
     self.blitzZeitAusgabe.text = [NSString stringWithFormat:@"arVar 4: %i", recvVar4];
-    */
+    
     close(s);  
     
+    */
     
 
 }

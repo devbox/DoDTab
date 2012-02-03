@@ -302,6 +302,7 @@
 				F8A24A2214D83CEB0045888D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
