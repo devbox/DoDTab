@@ -38,6 +38,10 @@
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *choosenValveOutlet3;
 
+
+
+@property (strong, nonatomic) IBOutlet UITextField *UiFlashDelay;
+
 /*
  - (IBAction)choosenValve1:(id)sender;
  
