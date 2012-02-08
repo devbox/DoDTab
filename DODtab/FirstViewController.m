@@ -189,16 +189,16 @@
     NSString *stringEmpfangen = [NSString stringWithUTF8String:buff];
     NSLog (@"Empfangen: %@",stringEmpfangen);
     sscanf(buff, "%d %d %d %d %d %d %d %d %d %d", &recvVar1, &recvVar2, &recvVar3, &recvVar4, &recvVar5, &recvVar6, &recvVar7, &recvVar8, &recvVar9, &recvVar10);
-    NSLog (@"gesetzter Wert 1: %i", recvVar1);
-    NSLog (@"gesetzter Wert 2: %i", recvVar2);
-    NSLog (@"gesetzter Wert 3: %i", recvVar3);
-    NSLog (@"gesetzter Wert 4: %i", recvVar4);
-    NSLog (@"gesetzter Wert 5: %i", recvVar5);
-    NSLog (@"gesetzter Wert 5: %i", recvVar6);
-    NSLog (@"gesetzter Wert 5: %i", recvVar7);
-    NSLog (@"gesetzter Wert 5: %i", recvVar8);
-    NSLog (@"gesetzter Wert 5: %i", recvVar9);
-    NSLog (@"gesetzter Wert 5: %i", recvVar10);
+    NSLog (@"gesetzter Wert 1:  %i", recvVar1);
+    NSLog (@"gesetzter Wert 2:  %i", recvVar2);
+    NSLog (@"gesetzter Wert 3:  %i", recvVar3);
+    NSLog (@"gesetzter Wert 4:  %i", recvVar4);
+    NSLog (@"gesetzter Wert 5:  %i", recvVar5);
+    NSLog (@"gesetzter Wert 6:  %i", recvVar6);
+    NSLog (@"gesetzter Wert 7:  %i", recvVar7);
+    NSLog (@"gesetzter Wert 8:  %i", recvVar8);
+    NSLog (@"gesetzter Wert 9:  %i", recvVar9);
+    NSLog (@"gesetzter Wert 10: %i", recvVar10);
     
     /*
     self.tropfenAnzahlAusgabe.text = [NSString stringWithFormat:@"arVar 1: %i", recvVar1];
