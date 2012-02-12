@@ -30,6 +30,7 @@
 @synthesize choosenValveOutlet1;
 @synthesize choosenValveOutlet2;
 @synthesize choosenValveOutlet3;
+@synthesize testSwitch;
 @synthesize UiFlashDelay;
 
 
@@ -94,10 +95,24 @@
     [self setUiFlashDelay:nil];
     [self setMenuView:nil];
     [self setScroller:nil];
+    [self setTestSwitch:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
+
+
+- (int)testState {
+    
+    if (testSwitch.on) {
+        
+        return 1;
+        
+    }
+    else{return 0;}
+    
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -130,6 +145,7 @@
 - (IBAction)backButton:(id)sender 
 {
     NSLog(@"%@", self.UiTextDelay1);
+    NSLog(@"%i", self.testState);
     [self.UiTextDelay1 resignFirstResponder];
     [self.UiTextDelay2 resignFirstResponder];
     [self.UiTextDelay3 resignFirstResponder]; 
@@ -153,7 +169,7 @@
     NSLog(@"%i", shot3.uebergabeWert);
     */
      
-    NSString *transmit = [NSString stringWithFormat:@"%i %i %i %i %i %i %i %i %i %i",shot1.valveId, shot1.valveDelay, shot1.valveOpenTime, shot2.valveId, shot2.valveDelay,shot2.valveOpenTime, shot3.valveId, shot3.valveDelay,shot3.valveOpenTime,[self.UiFlashDelay.text intValue]];
+    NSString *transmit = [NSString stringWithFormat:@"%i %i %i %i %i %i %i %i %i %i %i",shot1.valveId, shot1.valveDelay, shot1.valveOpenTime, shot2.valveId, shot2.valveDelay,shot2.valveOpenTime, shot3.valveId, shot3.valveDelay,shot3.valveOpenTime,[self.UiFlashDelay.text intValue],self.testState];
     
     NSLog(@"%@", transmit);
     
@@ -163,7 +179,7 @@
     struct sockaddr_in cli;
     struct hostent *server;
     char str [2048];    // puffer probleme durch gesamtsring?
-    server = gethostbyname("127.0.0.1");
+    server = gethostbyname("192.168.7.30");
     bzero(&cli, sizeof(cli));
     cli.sin_family = AF_INET;
     cli.sin_addr.s_addr = htonl(INADDR_ANY);
@@ -182,13 +198,13 @@
     
     char buff[2048];   // puffer probleme durch gesamtsring?
     unsigned int count; 
-    int recvVar1, recvVar2, recvVar3, recvVar4, recvVar5, recvVar6, recvVar7, recvVar8, recvVar9, recvVar10;  //recvVar5 wird von iPhone immer 1 sein, da es auf Arduino Seite als Start der Anlage dient, und danach auf Arduinoseite wieder auf 0 gesetzt wird.
+    int recvVar1, recvVar2, recvVar3, recvVar4, recvVar5, recvVar6, recvVar7, recvVar8, recvVar9, recvVar10, recvVar11;  //recvVar5 wird von iPhone immer 1 sein, da es auf Arduino Seite als Start der Anlage dient, und danach auf Arduinoseite wieder auf 0 gesetzt wird.
     listen(s, 5);
     count = recv(s, buff, sizeof(buff)-1, 0);   
     NSLog (@"%i",count);
     NSString *stringEmpfangen = [NSString stringWithUTF8String:buff];
     NSLog (@"Empfangen: %@",stringEmpfangen);
-    sscanf(buff, "%d %d %d %d %d %d %d %d %d %d", &recvVar1, &recvVar2, &recvVar3, &recvVar4, &recvVar5, &recvVar6, &recvVar7, &recvVar8, &recvVar9, &recvVar10);
+    sscanf(buff, "%d %d %d %d %d %d %d %d %d %d %d", &recvVar1, &recvVar2, &recvVar3, &recvVar4, &recvVar5, &recvVar6, &recvVar7, &recvVar8, &recvVar9, &recvVar10, &recvVar11);
     NSLog (@"gesetzter Wert 1:  %i", recvVar1);
     NSLog (@"gesetzter Wert 2:  %i", recvVar2);
     NSLog (@"gesetzter Wert 3:  %i", recvVar3);
@@ -199,6 +215,7 @@
     NSLog (@"gesetzter Wert 8:  %i", recvVar8);
     NSLog (@"gesetzter Wert 9:  %i", recvVar9);
     NSLog (@"gesetzter Wert 10: %i", recvVar10);
+    NSLog (@"gesetzter Wert 11: %i", recvVar11);
     
     /*
     self.tropfenAnzahlAusgabe.text = [NSString stringWithFormat:@"arVar 1: %i", recvVar1];
