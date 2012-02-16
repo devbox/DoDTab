@@ -40,6 +40,10 @@
 
 
 
+@property (strong, nonatomic) IBOutlet UISwitch *testSwitch;
+
+
+
 @property (strong, nonatomic) IBOutlet UITextField *UiFlashDelay;
 
 /*
@@ -50,4 +54,10 @@
  - (IBAction)choosenValve3:(id)sender;
  */
 - (IBAction)Start:(id)sender;
+
+
+- (int)testState;
+
+
+
 @end

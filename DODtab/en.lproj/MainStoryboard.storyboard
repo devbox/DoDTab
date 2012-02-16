@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -68,7 +68,7 @@
                                                 </connections>
                                             </textField>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ufa-Z7-gGJ">
-                                                <rect key="frame" x="25" y="72" width="100" height="44"/>
+                                                <rect key="frame" x="25" y="71" width="100" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <segments>
                                                     <segment title="V1"/>
@@ -230,6 +230,11 @@
                                                     <outlet property="delegate" destination="2" id="rC0-Y1-DNo"/>
                                                 </connections>
                                             </textField>
+                                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="umD-B7-Yiq">
+                                                <rect key="frame" x="14" y="361" width="79" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -250,12 +255,22 @@
                         <outlet property="choosenValveOutlet1" destination="ufa-Z7-gGJ" id="hhx-YA-uRX"/>
                         <outlet property="choosenValveOutlet2" destination="aGI-t4-BoR" id="MjH-y5-tve"/>
                         <outlet property="choosenValveOutlet3" destination="Lgo-gw-N6q" id="0cO-0Q-ElU"/>
-                        <outlet property="menuView" destination="lcV-S3-XuD" id="gKh-1m-bEL"/>
+                        <outlet property="menuView" destination="umD-B7-Yiq" id="PAO-ml-qTW"/>
                         <outlet property="scroller" destination="dhO-6o-Ygp" id="IyM-AC-BDu"/>
+                        <outlet property="testSwitch" destination="umD-B7-Yiq" id="qTd-sH-UHV"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
+        </scene>
+        <scene sceneID="AIq-n6-Wb2">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeA-9x-ays" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Third" id="n1Z-5C-AKd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="x7D-SY-M0k"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="653" y="1147"/>
         </scene>
         <scene sceneID="13">
             <objects>
@@ -303,40 +318,17 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
+                        <segue destination="n1Z-5C-AKd" kind="relationship" relationship="viewControllers" id="9cH-Xb-hch"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="-68" y="498"/>
         </scene>
     </scenes>
     <resources>
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Start:"/>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="UiFlashDelay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextDelay1" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextDelay2" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextDelay3" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextOpenTime1" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextOpenTime2" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UiTextOpenTime3" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="choosenValveOutlet1" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="choosenValveOutlet2" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="choosenValveOutlet3" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="menuView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scroller" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
