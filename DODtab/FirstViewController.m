@@ -194,7 +194,7 @@
     write(s, str, strlen(str));
     
     
-    //--------------- Daten empfangen durch Socket "s" -------------    
+    /*/--------------- Daten empfangen durch Socket "s" -------------    
     
     char buff[2048];   // puffer probleme durch gesamtsring?
     unsigned int count; 
@@ -217,7 +217,7 @@
     NSLog (@"gesetzter Wert 10: %i", recvVar10);
     NSLog (@"gesetzter Wert 11: %i", recvVar11);
     
-    /*
+    
     self.tropfenAnzahlAusgabe.text = [NSString stringWithFormat:@"arVar 1: %i", recvVar1];
     self.tropfenZeitAusgabe.text = [NSString stringWithFormat:@"arVar 2: %i", recvVar2];
     self.tropfenGroesseAusgabe.text = [NSString stringWithFormat:@"arVar 3: %i", recvVar3];
