@@ -38,6 +38,7 @@
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *choosenValveOutlet3;
 
+@property (strong, nonatomic) IBOutlet UITextField *UiLoops;
 
 
 @property (strong, nonatomic) IBOutlet UISwitch *testSwitch;

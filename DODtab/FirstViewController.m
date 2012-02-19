@@ -30,6 +30,7 @@
 @synthesize choosenValveOutlet1;
 @synthesize choosenValveOutlet2;
 @synthesize choosenValveOutlet3;
+@synthesize UiLoops;
 @synthesize testSwitch;
 @synthesize UiFlashDelay;
 
@@ -60,6 +61,7 @@
     [self.UiTextOpenTime2 resignFirstResponder];
     [self.UiTextOpenTime3 resignFirstResponder];
     [self.UiFlashDelay resignFirstResponder];
+    [self.UiLoops resignFirstResponder];
 }
 //-------------------------------
 
@@ -96,6 +98,7 @@
     [self setMenuView:nil];
     [self setScroller:nil];
     [self setTestSwitch:nil];
+    [self setUiLoops:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -153,6 +156,7 @@
     [self.UiTextOpenTime2 resignFirstResponder];
     [self.UiTextOpenTime3 resignFirstResponder];
     [self.UiFlashDelay resignFirstResponder];
+    [self.UiLoops resignFirstResponder];
     
 }
 
@@ -169,7 +173,7 @@
     NSLog(@"%i", shot3.uebergabeWert);
     */
      
-    NSString *transmit = [NSString stringWithFormat:@"%i %i %i %i %i %i %i %i %i %i %i",shot1.valveId, shot1.valveDelay, shot1.valveOpenTime, shot2.valveId, shot2.valveDelay,shot2.valveOpenTime, shot3.valveId, shot3.valveDelay,shot3.valveOpenTime,[self.UiFlashDelay.text intValue],self.testState];
+    NSString *transmit = [NSString stringWithFormat:@"%i %i %i %i %i %i %i %i %i %i %i %i",shot1.valveId, shot1.valveDelay, shot1.valveOpenTime, shot2.valveId, shot2.valveDelay,shot2.valveOpenTime, shot3.valveId, shot3.valveDelay,shot3.valveOpenTime,[self.UiFlashDelay.text intValue],self.testState, [self.UiLoops.text intValue]];
     
     NSLog(@"%@", transmit);
     

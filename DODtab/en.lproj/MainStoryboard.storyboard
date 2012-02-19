@@ -172,12 +172,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flash Delay" lineBreakMode="tailTruncation" minimumFontSize="10" id="nW6-ZI-8r8">
-                                                <rect key="frame" x="25" y="294" width="108" height="23"/>
+                                                <rect key="frame" x="25" y="265" width="108" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" placeholder="Loops" textAlignment="center" minimumFontSize="17" id="S3N-oE-Ivr">
+                                                <rect key="frame" x="175" y="302" width="40" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ms" lineBreakMode="tailTruncation" minimumFontSize="10" id="n3U-bS-xKc">
                                                 <rect key="frame" x="292" y="223" width="42" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -221,7 +228,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Delay" minimumFontSize="17" id="CAH-ul-gsN">
-                                                <rect key="frame" x="175" y="290" width="40" height="31"/>
+                                                <rect key="frame" x="175" y="261" width="40" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -235,6 +242,13 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Loops" lineBreakMode="tailTruncation" minimumFontSize="10" id="Wbu-cr-g1j">
+                                                <rect key="frame" x="25" y="307" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -246,6 +260,7 @@
                     <tabBarItem key="tabBarItem" title="Main" image="first.png" id="7"/>
                     <connections>
                         <outlet property="UiFlashDelay" destination="CAH-ul-gsN" id="L2k-Dr-Yg6"/>
+                        <outlet property="UiLoops" destination="S3N-oE-Ivr" id="yh0-5X-mFs"/>
                         <outlet property="UiTextDelay1" destination="Lp2-cO-QaN" id="WxX-d5-zki"/>
                         <outlet property="UiTextDelay2" destination="dpT-Xr-FVl" id="nwA-FD-i5X"/>
                         <outlet property="UiTextDelay3" destination="gsd-5c-x5j" id="xkn-kY-VQK"/>
@@ -329,6 +344,32 @@
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="FirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Start:"/>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="outlet" name="UiFlashDelay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiLoops" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextDelay1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextDelay2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextDelay3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextOpenTime1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextOpenTime2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UiTextOpenTime3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="choosenValveOutlet1" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="choosenValveOutlet2" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="choosenValveOutlet3" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="menuView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scroller" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="testSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
